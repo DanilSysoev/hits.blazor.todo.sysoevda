@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TodoServerApp.Data;
 
@@ -11,9 +12,11 @@ using TodoServerApp.Data;
 namespace TodoServerApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240927112218_add_taskitem")]
+    partial class add_taskitem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -232,14 +235,12 @@ namespace TodoServerApp.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("FinishData")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -250,28 +251,28 @@ namespace TodoServerApp.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedData = new DateTime(2024, 9, 27, 18, 29, 31, 812, DateTimeKind.Local).AddTicks(293),
+                            CreatedData = new DateTime(2024, 9, 27, 16, 22, 17, 868, DateTimeKind.Local).AddTicks(2801),
                             Description = "Описание задачи 1",
                             Title = "Задача 1"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedData = new DateTime(2024, 9, 27, 18, 29, 31, 812, DateTimeKind.Local).AddTicks(309),
+                            CreatedData = new DateTime(2024, 9, 27, 16, 22, 17, 868, DateTimeKind.Local).AddTicks(2823),
                             Description = "Описание задачи 2",
                             Title = "Задача 2"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedData = new DateTime(2024, 9, 27, 18, 29, 31, 812, DateTimeKind.Local).AddTicks(311),
+                            CreatedData = new DateTime(2024, 9, 27, 16, 22, 17, 868, DateTimeKind.Local).AddTicks(2825),
                             Description = "Описание задачи 3",
                             Title = "Задача 3"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedData = new DateTime(2024, 9, 27, 18, 29, 31, 812, DateTimeKind.Local).AddTicks(313),
+                            CreatedData = new DateTime(2024, 9, 27, 16, 22, 17, 868, DateTimeKind.Local).AddTicks(2827),
                             Description = "Описание задачи 4",
                             Title = "Задача 4"
                         });
